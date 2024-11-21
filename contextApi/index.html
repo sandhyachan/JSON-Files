@@ -4,11 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Context API JSON File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 14px;
+            max-height: 90vh;
+            overflow: auto;
+        }
+    </style>
 </head>
 <body>
 
+    <h1>Product JSON Data</h1>
+    <pre id="json-container"></pre>
+
     <script>
-        const products = [
+        const data = {
+            "products": [
                 {
                     "id": 1,
                     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -130,8 +151,8 @@
                     }
                 }
             ]
-
-        console.log(data);
+        };
+        document.getElementById('json-container').textContent = JSON.stringify(data, null, 2);
     </script>
 
 </body>
